@@ -1,0 +1,28 @@
+@import "src/scss/variables";
+@import "src/scss/common";
+
+.main-info {
+  background: url("src/assets/images/home-page-background.jpg") center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+
+  &-content {
+    text-align: left;
+    color: $white;
+    padding-top: 80px;
+    position: relative;
+
+    &__title {
+      text-transform: capitalize;
+      font-size: 38px;
+      margin: 0 0 45px 0;
+      white-space: normal;
+    }
+
+    &__text {
+      font-size: 18px;
+      font-weight: 300;
+    }
+  }
+}
+

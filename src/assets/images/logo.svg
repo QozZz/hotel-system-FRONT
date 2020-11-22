@@ -1,0 +1,10 @@
+<svg width="140" height="50" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_33" d="m49.75,25.18484l-6.35108,-6.33419l0,-15.128l-5.44468,0l0,9.69781l-12.70424,-12.67045l-24.5,24.43484l5.83254,-0.1386l0,24.70376l37.07564,0l0,-24.56516l6.09181,0zm-24.5,21.03192l-12.09859,0l0,-14.48052l12.09859,0l0,14.48052zm11.75428,-6.20594l-7.95026,0l0,-8.36146l7.95026,0l0,8.36146z" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#ffffff"/>
+  <text style="cursor: move;" font-style="normal" font-weight="bold" stroke="#000" transform="matrix(1.1254261627584583,0,0,1.0877798795694453,-7.144872224347978,4.670055471192661) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="20" id="svg_35" y="15" x="55" stroke-opacity="null" fill="#ffffff">Hotel</text>
+  <text font-weight="bold" stroke="#000" transform="matrix(1.1585467970383057,0,0,1.0877798795694453,-9.176153797587485,4.670055471192661) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="20" id="svg_36" y="35" x="55" stroke-opacity="null" fill="#ffffff">System</text>
+ </g>
+</svg>

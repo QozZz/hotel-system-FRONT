@@ -5,17 +5,19 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NotFoundPageComponent} from './not-found-page/not-found-page.component';
 import {RouterModule} from '@angular/router';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        AppRoutingModule,
+        LayoutModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
