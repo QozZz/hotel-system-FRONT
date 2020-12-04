@@ -1,5 +1,12 @@
 <div class="hotel-list vertical-wrapper">
   <div class="hotel-list-content horizontal-wrapper">
     <h1 class="hotel-list-content__title">Hotel-list Component!</h1>
+    <div *ngFor="let hotel of hotels">
+      <h3>
+        <span>{{hotel.id}}) </span>
+        <span>{{hotel.name}}  </span>
+        <span>*{{hotel.stars}}</span>
+      </h3>
+    </div>
   </div>
 </div>
