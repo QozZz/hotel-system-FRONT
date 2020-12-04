@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {HotelService} from '../services/hotel.service';
+import {Hotel} from '../shared/models/Hotel';
 
 @Component({
   selector: 'app-hotel-list',
@@ -7,10 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HotelListComponent implements OnInit {
 
-  constructor() {
+  hotels: Hotel[];
+
+  constructor(private hotelService: HotelService) {
   }
 
   ngOnInit(): void {
+    this.hotelService.getAll()
+      .subscribe(hotels => this.hotels = hotels, error => console.log(error));
   }
 
 }
