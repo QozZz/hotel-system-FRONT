@@ -2,21 +2,70 @@
 @import "src/scss/common";
 
 .hotel-list {
-  background: url("src/assets/images/home-page-background.jpg") center no-repeat fixed;
-  background-size: cover;
-  position: relative;
 
   &-content {
+    display: flex;
+    justify-content: space-between;
     text-align: left;
     color: $white;
     padding-top: 80px;
     position: relative;
+  }
 
-    &__title {
-      text-transform: capitalize;
-      font-size: 38px;
-      margin: 0 0 45px 0;
-      white-space: normal;
+  &__filters {
+    padding: 15px 5px 5px 10px;
+    display: block;
+    width: 300px;
+    position: relative;
+  }
+
+  &__wrapper {
+    padding-top: 5px;
+    display: block;
+    width: 900px;
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__image {
+    padding: 5px 5px 10px 5px;
+    img {
+      border-radius: 10%;
+      width: 300px;
     }
+  }
+
+  &__info {
+    display: block;
+    position: relative;
+    padding: 5px 5px 10px 5px;
+    width: 100%;
+  }
+
+  &__title {
+    display: flex;
+    padding-top: 10px;
+    a {
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color ease 0.2s;
+
+      &:hover {
+        color: #00ccff;
+      }
+    }
+  }
+
+  &__description {
+    padding-top: 10px;
+  }
+
+  &__stars {
+    position: relative;
+
   }
 }
