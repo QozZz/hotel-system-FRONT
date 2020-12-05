@@ -2,3 +2,9 @@
 
 @import 'variables';
 @import 'common';
+
+body {
+  background: url("src/assets/images/home-page-background.jpg") center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+}

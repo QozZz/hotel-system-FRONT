@@ -11,12 +11,21 @@ export class HotelListComponent implements OnInit {
 
   hotels: Hotel[];
 
-  constructor(private hotelService: HotelService) {
-  }
+  constructor(
+    private hotelService: HotelService
+  ) {}
 
   ngOnInit(): void {
+    this.getHotelList();
+  }
+
+  getHotelList() {
     this.hotelService.getAll()
       .subscribe(hotels => this.hotels = hotels, error => console.log(error));
+  }
+
+  getCounter(num: number): Array<number> {
+    return new Array(num);
   }
 
 }

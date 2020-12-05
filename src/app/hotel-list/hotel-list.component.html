@@ -1,12 +1,28 @@
 <div class="hotel-list vertical-wrapper">
   <div class="hotel-list-content horizontal-wrapper">
-    <h1 class="hotel-list-content__title">Hotel-list Component!</h1>
-    <div *ngFor="let hotel of hotels">
-      <h3>
-        <span>{{hotel.id}}) </span>
-        <span>{{hotel.name}}  </span>
-        <span>*{{hotel.stars}}</span>
-      </h3>
+    <div class="hotel-list__filters">
+      <h1>sss</h1>
+      <h1>sss</h1>
+      <h1>sss</h1>
+    </div>
+    <div class="hotel-list__wrapper">
+      <div class="hotel-list__container" *ngFor="let hotel of hotels">
+        <div class="hotel-list__image">
+          <img src="assets/images/hotel-image.jpg">
+        </div>
+        <div class="hotel-list__info">
+          <div class="hotel-list__stars">
+            <img src="assets/images/small-star.png" alt="star" *ngFor="let num of getCounter(hotel.stars)">
+          </div>
+          <div class="hotel-list__title">
+            <a routerLink="{{hotel.id}}" routerLinkActive="active"><h2>{{hotel.name}}</h2></a>
+          </div>
+          <div class="hotel-list__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus quaerat quia voluptates!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus quaerat quia voluptates!
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
