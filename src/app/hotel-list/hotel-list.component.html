@@ -1,9 +1,12 @@
 <div class="hotel-list vertical-wrapper">
   <div class="hotel-list-content horizontal-wrapper">
     <div class="hotel-list__filters">
-      <h1>sss</h1>
-      <h1>sss</h1>
-      <h1>sss</h1>
+      <div class="filter-stars">
+        <h2>Stars:</h2>
+        <label><span>3</span><input type="checkbox" value="3" (input)="addStarsFilter($event)"></label>
+        <label><span>4</span><input type="checkbox" value="4" (input)="addStarsFilter($event)"></label>
+        <label><span>5</span><input type="checkbox" value="5" (input)="addStarsFilter($event)"></label>
+      </div>
     </div>
     <div class="hotel-list__wrapper">
       <div class="hotel-list__container" *ngFor="let hotel of hotels">
@@ -18,8 +21,12 @@
             <a routerLink="{{hotel.id}}" routerLinkActive="active"><h2>{{hotel.name}}</h2></a>
           </div>
           <div class="hotel-list__description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus quaerat quia voluptates!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus quaerat quia voluptates!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas
+            repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus
+            quaerat quia voluptates!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid dolore fuga harum laudantium quas
+            repudiandae ullam voluptates. Commodi, ipsam nostrum. Accusamus assumenda cupiditate debitis minus natus
+            quaerat quia voluptates!
           </div>
         </div>
       </div>
