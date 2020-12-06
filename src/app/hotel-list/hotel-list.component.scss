@@ -1,6 +1,23 @@
 @import "src/scss/variables";
 @import "src/scss/common";
 
+.filter-stars {
+  h2 {
+    padding-bottom: 5px;
+  }
+
+  span {
+    font-size: 30px;
+  }
+
+  input {
+    margin-right: 5px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+  }
+}
+
 .hotel-list {
 
   &-content {
@@ -32,6 +49,7 @@
 
   &__image {
     padding: 5px 5px 10px 5px;
+
     img {
       border-radius: 10%;
       width: 300px;
@@ -48,6 +66,7 @@
   &__title {
     display: flex;
     padding-top: 10px;
+
     a {
       color: $white;
       text-decoration: none;
