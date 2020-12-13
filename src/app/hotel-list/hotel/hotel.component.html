@@ -1,5 +1,28 @@
 <div class="hotel vertical-wrapper">
   <div class="hotel-content horizontal-wrapper">
-    <h1>Hotel Component (id = {{hotel.id}}) work</h1>
+
+    <div class="hotel-container" *ngIf="!isRoomsBlockOpened; else roomListBlock">
+      <div class="hotel__title">
+        <h1>{{hotelDto.name}}</h1>
+        <button
+          class="button button-rent"
+          (click)="roomListBlockToggle()"
+        >Rooms</button>
+      </div>
+      <div class="hotel__images">
+        <h1>hotel__images</h1>
+      </div>
+      <div class="hotel__description">
+        <h1>hotel_description</h1>
+      </div>
+    </div>
+
+    <ng-template #roomListBlock>
+      <app-room-list
+        (onCloseRoomListBlock)="roomListBlockToggle()"
+        [hotelId]="hotelDto.id"
+      ></app-room-list>
+    </ng-template>
+
   </div>
 </div>

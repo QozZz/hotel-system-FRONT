@@ -12,4 +12,59 @@
     position: relative;
   }
 
+  &-container {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid red;
+    position: relative;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    margin: 0 0 10px 0;
+  }
+
+  &__images {
+    border: 1px solid white;
+    margin: 0 0 10px 0;
+  }
+
+  &__description {
+    border: 1px solid white;
+    margin: 0 0 10px 0;
+  }
+}
+
+.button-rent {
+  background-color: rgba(114, 175, 16, 0.7);
+
+  &:hover {
+    background-color: rgba(114, 175, 16, 0.85);
+  }
+}
+
+.button-close {
+  background-color: rgba(175, 16, 16, 0.7);
+
+  &:hover {
+    background-color: rgba(175, 16, 16, 0.85);
+  }
+}
+
+.rooms {
+
+  &-container {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid red;
+    position: relative;
+  }
+
+  &-back {
+    button {
+
+    }
+  }
 }

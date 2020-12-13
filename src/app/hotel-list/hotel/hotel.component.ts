@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HotelService} from '../../services/hotel.service';
-import {Hotel} from '../../shared/models/Hotel';
+import {HotelDto} from '../../shared/models/HotelDto';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -10,21 +10,22 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HotelComponent implements OnInit {
 
-  hotel: Hotel;
+  isRoomsBlockOpened = false;
+  hotelDto: HotelDto;
 
   constructor(
     private hotelService: HotelService,
     private route: ActivatedRoute,
-  ) {}
-
-  ngOnInit(): void {
-    console.log(this.route.snapshot.params.id);
-    this.getHotel();
+  ) {
   }
 
-  getHotel() {
+  ngOnInit(): void {
     this.hotelService.getById(this.route.snapshot.params.id)
-      .subscribe(hotel => this.hotel = hotel, error => console.log(error));
+      .subscribe(hotelDto => this.hotelDto = hotelDto, error => console.log(error));
+  }
+
+  roomListBlockToggle() {
+    this.isRoomsBlockOpened = !this.isRoomsBlockOpened;
   }
 
 }

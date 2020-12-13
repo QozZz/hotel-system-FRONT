@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HotelService} from '../services/hotel.service';
-import {Hotel} from '../shared/models/Hotel';
+import {HotelDto} from '../shared/models/HotelDto';
 
 @Component({
   selector: 'app-hotel-list',
@@ -9,8 +9,8 @@ import {Hotel} from '../shared/models/Hotel';
 })
 export class HotelListComponent implements OnInit {
 
-  hotelsCache: Hotel[];
-  hotels: Hotel[];
+  hotelsCache: HotelDto[];
+  hotels: HotelDto[];
 
   starsFilter: number[];
 
@@ -27,13 +27,8 @@ export class HotelListComponent implements OnInit {
     this.starsFilter = [];
   }
 
-  getCounter(num: number): Array<number> {
-    return new Array(num);
-  }
-
   addStarsFilter(event: any) {
     const value = Number(event.target.value);
-    console.log(this.starsFilter);
     if (!this.starsFilter.includes(value)) {
       this.starsFilter.push(value);
     } else {
@@ -49,7 +44,6 @@ export class HotelListComponent implements OnInit {
       this.hotels = this.hotelsCache
         .filter(value => this.starsFilter.includes(value.stars));
     }
-    console.log(this.hotels);
   }
 
 }
