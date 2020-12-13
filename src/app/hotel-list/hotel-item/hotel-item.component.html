@@ -1,0 +1,24 @@
+<div class="hotel-item__container">
+  <div class="hotel-item__image">
+    <img src="assets/images/hotel-image.jpg" alt="hotel">
+  </div>
+  <div class="hotel-item__info">
+    <div class="hotel-item__stars">
+      <img src="assets/images/small-star.svg" alt="star" *ngFor="let num of getCounter(hotelDto.stars)">
+    </div>
+    <div class="hotel-item__title">
+      <a routerLink="{{hotelDto.id}}" routerLinkActive="active"><h2>{{hotelDto.name}}</h2></a>
+    </div>
+    <div class="hotel-item__description">
+      <p>{{hotelDto.description}}</p>
+    </div>
+    <div class="hotel-item__facilities">
+      <div class="hotel-item__facilities-item">
+        <img *ngIf="hotelDto.hasPool" src="assets/images/hotel-item-small-pool.svg" alt="Pool">
+      </div>
+      <div class="hotel-item__facilities-item">
+        <img *ngIf="hotelDto.hasRestaurant" src="assets/images/hotel-item-small-restaurant.svg" alt="Restaurant">
+      </div>
+    </div>
+  </div>
+</div>
