@@ -1,0 +1,44 @@
+@import "src/scss/variables";
+@import "src/scss/common";
+
+.room-item {
+
+  &__container {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    padding: 5px 20px 10px 5px;
+
+    img {
+      border-radius: 10%;
+      width: 300px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 5px 10px 10px;
+    width: 100%;
+  }
+
+  &__price {
+
+  }
+
+  &__rent {
+    padding: 0 20px 0 0;
+  }
+
+}
+
+.button-rent {
+  background-color: rgba(243, 135, 39, 0.7);
+
+  &:hover {
+    background-color: rgba(243, 135, 39, 0.85);
+  }
+}

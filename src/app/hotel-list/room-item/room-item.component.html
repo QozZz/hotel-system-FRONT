@@ -1,0 +1,16 @@
+<div class="room-item__container">
+  <div class="room-item__image">
+    <img src="assets/images/hotel-image.jpg" alt="hotel">
+  </div>
+  <div class="room-item__info">
+    <div class="hotel-item__price">
+      <h1>$ {{roomDto.price}}</h1>
+    </div>
+    <div class="room-item__rent">
+      <button
+        class="button button-rent"
+        (click)="rentRoom(roomDto.id)"
+      >Rent</button>
+    </div>
+  </div>
+</div>
