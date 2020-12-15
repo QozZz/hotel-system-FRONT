@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RoomDto} from '../../shared/models/RoomDto';
 
 @Component({
@@ -8,6 +8,7 @@ import {RoomDto} from '../../shared/models/RoomDto';
 })
 export class RoomItemComponent implements OnInit {
 
+  @Output() onOpenSelectedRoom = new EventEmitter<any>();
   @Input() roomDto: RoomDto;
 
   constructor() {
@@ -16,7 +17,7 @@ export class RoomItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  rentRoom(roomId: number) {
-    console.log(`rentRoom(${roomId})`);
+  selectRoom(id: number) {
+    this.onOpenSelectedRoom.emit(id);
   }
 }

@@ -9,9 +9,13 @@ import {RoomService} from '../../services/room.service';
 })
 export class RoomListComponent implements OnInit {
 
+  roomSelected = false;
+
   @Output() onCloseRoomListBlock = new EventEmitter<any>();
   @Input() hotelId: number;
-  rooms: RoomDto[];
+  @Input() roomsCache: RoomDto[];
+  @Input() rooms: RoomDto[];
+  roomDto: RoomDto;
 
   constructor(
     private roomService: RoomService
@@ -20,11 +24,19 @@ export class RoomListComponent implements OnInit {
 
   ngOnInit(): void {
     this.roomService.getAllByHotelId(this.hotelId).subscribe(rooms => {
+      this.roomsCache = rooms;
       this.rooms = rooms;
-    }, error => console.log(error));
+    });
   }
 
   closeRoomListBlock() {
     this.onCloseRoomListBlock.emit();
   }
+
+  openSelectedRoom(id: number) {
+    this.roomSelected = !this.roomSelected;
+    this.roomDto = this.roomsCache
+      .find(value => value.id = id);
+  }
+
 }

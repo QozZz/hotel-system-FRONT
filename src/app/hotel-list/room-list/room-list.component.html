@@ -1,5 +1,5 @@
-<div class="vertical-wrapper">
-  <div class="hotel-content horizontal-wrapper">
+<div class="vertical-wrapper" *ngIf="!roomSelected; else roomTemplate">
+  <div class="horizontal-wrapper">
 
     <div class="room-list">
       <div class="room-list__close">
@@ -22,6 +22,7 @@
           <app-room-item
             *ngFor="let room of rooms"
             [roomDto]="room"
+            (onOpenSelectedRoom)="openSelectedRoom(room.id)"
           ></app-room-item>
         </div>
       </div>
@@ -29,3 +30,10 @@
 
   </div>
 </div>
+
+<ng-template #roomTemplate>
+  <app-room
+    [roomDto]="roomDto"
+    (onCloseRoom)="roomSelected = !roomSelected"
+  ></app-room>
+</ng-template>
