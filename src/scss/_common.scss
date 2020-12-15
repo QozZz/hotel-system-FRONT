@@ -38,4 +38,34 @@
   color: $white;
 }
 
+.button-dark-red {
+  background-color: rgba(175, 16, 16, 0.7);
 
+  &:hover {
+    background-color: rgba(175, 16, 16, 0.85);
+  }
+}
+
+.button-orange {
+  background-color: rgba(193, 141, 20, 0.7);
+
+  &:hover {
+    background-color: rgba(193, 141, 20, 0.85);
+  }
+}
+
+.button-green {
+  background-color: rgba(114, 175, 16, 0.7);
+
+  &:hover {
+    background-color: rgba(114, 175, 16, 0.85);
+  }
+}
+
+.button-light-blue {
+  background-color: rgba(0, 204, 255, 0.7);
+
+  &:hover {
+    background-color: rgba(0, 204, 255, 0.85);
+  }
+}

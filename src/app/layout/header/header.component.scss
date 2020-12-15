@@ -2,8 +2,8 @@
 @import "src/scss/common";
 
 .header {
-  display: block;
   position: fixed;
+  display: block;
   background: $translucentBlue;
   top: 0;
   left: 0;
@@ -12,6 +12,7 @@
   z-index: 5;
 
   &__wrapper {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -19,25 +20,32 @@
   }
 
   &__logo-container {
+    position: relative;
     display: flex;
   }
 
   &__logo-link {
+    position: relative;
+    display: block;
     padding: 10px 20px 5px 0;
   }
 
   &__logo {
+    position: relative;
+    display: block;
     width: 140px;
     height: 50px;
     cursor: pointer;
   }
 
   &__nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
   }
 
   &__link-container {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -45,6 +53,8 @@
   }
 
   &__link {
+    position: relative;
+    display: block;
     margin: 0 15px 0 0;
     font-size: 20px;
     color: $white;
@@ -59,10 +69,13 @@
   }
 
   &__authentication-container {
+    position: relative;
     display: flex;
   }
 
   &__profile-img {
+    position: relative;
+    display: block;
     padding: 5px 10px 0 0;
 
     img{
@@ -78,21 +91,4 @@
       }
     }
   }
-
-  .button-login {
-    background-color: rgba(0, 204, 255, 0.7);
-
-    &:hover {
-      background-color: rgba(0, 204, 255, 0.85);
-    }
-  }
-
-  .button-logout {
-    background-color: rgba(175, 16, 16, 0.7);
-
-    &:hover {
-      background-color: rgba(175, 16, 16, 0.85);
-    }
-  }
-
 }

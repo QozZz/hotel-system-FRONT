@@ -2,37 +2,37 @@
 @import "src/scss/common";
 
 .room-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 80px;
+
+  &__close {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &-content {
+    position: relative;
     display: flex;
     justify-content: space-between;
     text-align: left;
     color: $white;
-    //padding-top: 80px;
-    position: relative;
   }
 
   &__filters {
-    padding: 15px 5px 5px 10px;
-    display: block;
-    width: 300px;
     position: relative;
+    display: block;
+    padding: 15px 5px 5px 10px;
+    width: 300px;
   }
 
   &__wrapper {
-    padding-top: 5px;
-    display: block;
-    width: 900px;
     position: relative;
+    display: block;
+    padding-top: 5px;
+    width: 900px;
   }
 
-  &__close {
-   button {
-     background-color: rgba(175, 16, 16, 0.7);
-
-     &:hover {
-       background-color: rgba(175, 16, 16, 0.85);
-     }
-   }
-  }
 }

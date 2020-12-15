@@ -2,69 +2,38 @@
 @import "src/scss/common";
 
 .hotel {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 80px;
+  text-align: left;
+  color: $white;
 
-  &-content {
+  &__close {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    text-align: left;
-    color: $white;
-    padding-top: 80px;
-    position: relative;
-  }
-
-  &-container {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid red;
-    position: relative;
   }
 
   &__title {
+    position: relative;
     display: flex;
     justify-content: space-between;
     border: 1px solid white;
-    margin: 0 0 10px 0;
+    margin: 20px 0 10px 0;
   }
 
   &__images {
+    position: relative;
+    display: block;
     border: 1px solid white;
     margin: 0 0 10px 0;
   }
 
   &__description {
+    position: relative;
+    display: block;
     border: 1px solid white;
     margin: 0 0 10px 0;
-  }
-}
-
-.button-rent {
-  background-color: rgba(114, 175, 16, 0.7);
-
-  &:hover {
-    background-color: rgba(114, 175, 16, 0.85);
-  }
-}
-
-.button-close {
-  background-color: rgba(175, 16, 16, 0.7);
-
-  &:hover {
-    background-color: rgba(175, 16, 16, 0.85);
-  }
-}
-
-.rooms {
-
-  &-container {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid red;
-    position: relative;
-  }
-
-  &-back {
-    button {
-
-    }
   }
 }

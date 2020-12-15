@@ -20,11 +20,11 @@
         </a>
       </div>
       <div class="header__authentication-container" *ngIf="!isLoggedIn; else logoutBlock">
-        <button class="button button-login" (click)="logInOut()">Log In</button>
+        <button class="button button-light-blue" (click)="logInOut()">Log In</button>
       </div>
       <ng-template #logoutBlock>
         <div class="header__authentication-container">
-          <button class="button button-logout" (click)="logInOut()">Log Out</button>
+          <button class="button button-dark-red" (click)="logInOut()">Log Out</button>
         </div>
       </ng-template>
     </div>

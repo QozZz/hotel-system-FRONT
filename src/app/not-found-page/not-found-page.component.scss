@@ -2,17 +2,22 @@
 @import "src/scss/common";
 
 .not-found {
+  position: relative;
+  display: block;
 
   &-content {
+    position: relative;
+    display: block;
+    padding-top: 80px;
     text-align: left;
     color: $white;
-    padding-top: 80px;
-    position: relative;
 
     &__title {
+      position: relative;
+      display: block;
+      margin: 0 0 45px 0;
       text-transform: capitalize;
       font-size: 38px;
-      margin: 0 0 45px 0;
       white-space: normal;
     }
   }

@@ -9,8 +9,11 @@ import {HotelDto} from '../shared/models/HotelDto';
 })
 export class HotelListComponent implements OnInit {
 
+  hotelSelected = false;
+
   hotelsCache: HotelDto[];
   hotels: HotelDto[];
+  hotelDto: HotelDto;
 
   starsFilter: number[];
 
@@ -44,6 +47,12 @@ export class HotelListComponent implements OnInit {
       this.hotels = this.hotelsCache
         .filter(value => this.starsFilter.includes(value.stars));
     }
+  }
+
+  openSelectedHotel(id: number) {
+    this.hotelSelected = !this.hotelSelected;
+    this.hotelDto = this.hotelsCache
+      .find(value => value.id = id);
   }
 
 }
