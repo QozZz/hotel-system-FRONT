@@ -1,6 +1,6 @@
-<div class="room-item__container">
+<div class="room-item">
   <div class="room-item__image">
-    <img src="assets/images/hotel-image.jpg" alt="hotel">
+    <img (click)="selectRoom(roomDto.id)" src="assets/images/room-image.jpg" alt="hotel">
   </div>
   <div class="room-item__info">
     <div class="hotel-item__price">
@@ -8,9 +8,9 @@
     </div>
     <div class="room-item__rent">
       <button
-        class="button button-green"
-        (click)="rentRoom(roomDto.id)"
-      >Rent</button>
+        class="button button-orange"
+        (click)="selectRoom(roomDto.id)"
+      >Room</button>
     </div>
   </div>
 </div>

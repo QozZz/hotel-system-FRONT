@@ -1,0 +1,30 @@
+<div class="vertical-wrapper">
+  <div class="horizontal-wrapper">
+
+    <div class="room">
+      <div class="room__close">
+        <div></div>
+        <div><button
+          class="button button-green"
+          (click)="rentRoom()"
+        >Rent</button>
+          <button
+            class="button button-dark-red"
+            (click)="closeRoom()"
+          >close</button>
+        </div>
+
+      </div>
+      <div class="room__title">
+        <h1>Number: #{{roomDto.number}}</h1>
+      </div>
+      <div class="room__images">
+        <h1>room__images</h1>
+      </div>
+      <div class="room__description">
+        <h1>room_description</h1>
+      </div>
+    </div>
+
+  </div>
+</div>

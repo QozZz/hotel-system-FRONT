@@ -6,6 +6,7 @@ import {HotelItemComponent} from './hotel-item/hotel-item.component';
 import {HotelComponent} from './hotel/hotel.component';
 import {RoomListComponent} from './room-list/room-list.component';
 import { RoomItemComponent } from './room-item/room-item.component';
+import { RoomComponent } from './room/room.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RoomItemComponent } from './room-item/room-item.component';
     HotelItemComponent,
     HotelComponent,
     RoomListComponent,
-    RoomItemComponent
+    RoomItemComponent,
+    RoomComponent
   ],
   imports: [
     CommonModule,

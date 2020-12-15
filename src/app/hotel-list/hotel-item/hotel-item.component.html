@@ -1,13 +1,13 @@
 <div class="hotel-item">
   <div class="hotel-item__image">
-    <img src="assets/images/hotel-image.jpg" alt="hotel">
+    <img (click)="selectHotel(hotelDto.id)" src="assets/images/hotel-image.jpg" alt="hotel">
   </div>
   <div class="hotel-item__info">
     <div class="hotel-item__stars">
       <img src="assets/images/small-star.svg" alt="star" *ngFor="let num of getCounter(hotelDto.stars)">
     </div>
     <div class="hotel-item__title">
-      <h2 (click)="selectHotel(hotelDto.id)">aa</h2>
+      <h2 (click)="selectHotel(hotelDto.id)">{{hotelDto.name}}</h2>
     </div>
     <div class="hotel-item__description">
       <p>{{hotelDto.description}}</p>
