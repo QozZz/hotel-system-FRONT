@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HotelDto} from '../../shared/models/HotelDto';
 
 @Component({
@@ -8,6 +8,7 @@ import {HotelDto} from '../../shared/models/HotelDto';
 })
 export class HotelItemComponent implements OnInit {
 
+  @Output() onOpenSelectedHotel = new EventEmitter<any>();
   @Input() hotelDto: HotelDto;
 
   constructor() {
@@ -20,4 +21,7 @@ export class HotelItemComponent implements OnInit {
     return new Array(num);
   }
 
+  selectHotel(id: number) {
+    this.onOpenSelectedHotel.emit(id);
+  }
 }

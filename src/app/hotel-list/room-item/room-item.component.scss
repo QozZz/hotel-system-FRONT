@@ -2,13 +2,18 @@
 @import "src/scss/common";
 
 .room-item {
+  position: relative;
+  display: block;
 
   &__container {
+    position: relative;
     display: flex;
     margin-bottom: 20px;
   }
 
   &__image {
+    position: relative;
+    display: block;
     padding: 5px 20px 10px 5px;
 
     img {
@@ -18,27 +23,20 @@
   }
 
   &__info {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    padding: 10px 5px 10px 10px;
+    padding: 10px 0 10px 10px;
     width: 100%;
   }
 
   &__price {
-
+    position: relative;
+    display: block;
   }
 
   &__rent {
-    padding: 0 20px 0 0;
-  }
-
-}
-
-.button-rent {
-  background-color: rgba(243, 135, 39, 0.7);
-
-  &:hover {
-    background-color: rgba(243, 135, 39, 0.85);
+    position: relative;
+    display: block;
   }
 }

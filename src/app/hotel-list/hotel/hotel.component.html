@@ -1,11 +1,18 @@
-<div class="hotel vertical-wrapper">
-  <div class="hotel-content horizontal-wrapper">
+<div class="vertical-wrapper" *ngIf="!isRoomsBlockOpened; else roomListBlock">
+  <div class="horizontal-wrapper">
 
-    <div class="hotel-container" *ngIf="!isRoomsBlockOpened; else roomListBlock">
+    <div class="hotel">
+      <div class="hotel__close">
+        <div></div>
+          <button
+            class="button button-dark-red"
+            (click)="closeHotel()"
+          >close</button>
+      </div>
       <div class="hotel__title">
         <h1>{{hotelDto.name}}</h1>
         <button
-          class="button button-rent"
+          class="button button-orange"
           (click)="roomListBlockToggle()"
         >Rooms</button>
       </div>
@@ -17,12 +24,12 @@
       </div>
     </div>
 
-    <ng-template #roomListBlock>
-      <app-room-list
-        (onCloseRoomListBlock)="roomListBlockToggle()"
-        [hotelId]="hotelDto.id"
-      ></app-room-list>
-    </ng-template>
-
   </div>
 </div>
+
+<ng-template #roomListBlock>
+  <app-room-list
+    (onCloseRoomListBlock)="roomListBlockToggle()"
+    [hotelId]="hotelDto.id"
+  ></app-room-list>
+</ng-template>

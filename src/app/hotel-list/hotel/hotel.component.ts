@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {HotelService} from '../../services/hotel.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {HotelDto} from '../../shared/models/HotelDto';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-hotel',
@@ -10,22 +8,23 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HotelComponent implements OnInit {
 
+  @Output() onCloseHotel = new EventEmitter<any>();
+  @Input() hotelDto: HotelDto;
   isRoomsBlockOpened = false;
-  hotelDto: HotelDto;
 
-  constructor(
-    private hotelService: HotelService,
-    private route: ActivatedRoute,
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.hotelService.getById(this.route.snapshot.params.id)
-      .subscribe(hotelDto => this.hotelDto = hotelDto, error => console.log(error));
+
   }
 
   roomListBlockToggle() {
     this.isRoomsBlockOpened = !this.isRoomsBlockOpened;
+  }
+
+  closeHotel() {
+    this.onCloseHotel.emit();
   }
 
 }

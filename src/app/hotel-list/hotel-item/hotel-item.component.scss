@@ -2,13 +2,13 @@
 @import "src/scss/common";
 
 .hotel-item {
-
-  &__container {
-    display: flex;
-    margin-bottom: 20px;
-  }
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
 
   &__image {
+    position: relative;
+    display: block;
     padding: 5px 20px 10px 5px;
 
     img {
@@ -18,21 +18,23 @@
   }
 
   &__info {
-    display: block;
     position: relative;
+    display: block;
     padding: 10px 5px 10px 10px;
     width: 100%;
   }
 
   &__stars {
     position: relative;
+    display: block;
   }
 
   &__title {
+    position: relative;
     display: flex;
     padding-top: 10px;
 
-    a {
+    h2 {
       color: $white;
       text-decoration: none;
       cursor: pointer;
@@ -45,10 +47,13 @@
   }
 
   &__description {
+    position: relative;
+    display: block;
     padding-top: 10px;
   }
 
   &__facilities {
+    position: relative;
     display: inline-flex;
     padding: 10px 0 0 0;
 
@@ -58,9 +63,11 @@
   }
 
   &__facilities-item {
+    position: relative;
+    display: block;
+
     &:hover {
-      //tex
+
     }
   }
-
 }

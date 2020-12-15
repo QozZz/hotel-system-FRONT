@@ -1,4 +1,4 @@
-<div class="hotel-item__container">
+<div class="hotel-item">
   <div class="hotel-item__image">
     <img src="assets/images/hotel-image.jpg" alt="hotel">
   </div>
@@ -7,7 +7,7 @@
       <img src="assets/images/small-star.svg" alt="star" *ngFor="let num of getCounter(hotelDto.stars)">
     </div>
     <div class="hotel-item__title">
-      <a routerLink="{{hotelDto.id}}" routerLinkActive="active"><h2>{{hotelDto.name}}</h2></a>
+      <h2 (click)="selectHotel(hotelDto.id)">aa</h2>
     </div>
     <div class="hotel-item__description">
       <p>{{hotelDto.description}}</p>

@@ -2,6 +2,9 @@
 @import "src/scss/common";
 
 .filter-stars {
+  position: relative;
+  display: block;
+
   h2 {
     padding-bottom: 5px;
   }
@@ -19,28 +22,24 @@
 }
 
 .hotel-list {
-
-  &-content {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    color: $white;
-    padding-top: 80px;
-    position: relative;
-  }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  color: $white;
+  padding-top: 80px;
 
   &__filters {
-    padding: 15px 5px 5px 10px;
-    display: block;
-    width: 300px;
     position: relative;
+    display: block;
+    padding: 15px 5px 5px 10px;
+    width: 300px;
   }
 
   &__wrapper {
-    padding-top: 5px;
-    display: block;
-    width: 900px;
     position: relative;
+    display: block;
+    padding-top: 5px;
+    width: 900px;
   }
-
 }
