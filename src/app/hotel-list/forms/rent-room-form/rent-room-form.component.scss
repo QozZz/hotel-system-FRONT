@@ -3,22 +3,37 @@
 
 .form {
   position: relative;
-  display: block;
-  float: top;
-  //left: 50%;
-  //top: 10%;
-  border: solid 2px red;
+  display: inline-block;
+  margin-right: 10px;
+
   h1 {
     color: $white;
+    display: inline;
+  }
+
+  label {
+    color: $white;
+    font-size: 20px;
+  }
+
+  input {
+    margin: 0 20px 0 10px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+
+  button {
+    padding-bottom: 10px;
   }
 
   &-group {
     position: relative;
-    display: block;
+    display: inline-block;
+    align-items: center;
   }
 
   &-control {
     position: relative;
-    display: block;
+    display: inline-block;
   }
 }

@@ -1,25 +1,18 @@
-<app-rent-room-form
-  *ngIf="rentRoomFormOpen"
-  (onSubmit)="rentRoom($event)"
-></app-rent-room-form>
-
-<div class="room" [ngStyle]="{filter: rentRoomFormOpen ? 'blur(5px)' : null}">
+<div class="room">
   <div class="room__close">
     <div></div>
     <div>
-      <button
-        class="button button-green"
-        (click)="rentRoomFormOpen = !rentRoomFormOpen"
-      >Rent
-      </button>
+      <app-rent-room-form
+        (onSubmit)="rentRoom($event)"
+      ></app-rent-room-form>
       <button
         class="button button-dark-red"
         (click)="closeRoom()"
       >close
       </button>
     </div>
-
   </div>
+
   <div class="room__title">
     <h1>Number: {{roomDto.number}}</h1>
   </div>
