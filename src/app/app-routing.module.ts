@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {NotFoundPageComponent} from './not-found-page/not-found-page.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -13,9 +13,8 @@ const routes: Routes = [
     path: 'hotels',
     loadChildren: () => import('../app/hotel-list/hotel-list.module').then(m => m.HotelListModule),
   },
-  {
-    path: '**', component: NotFoundPageComponent,
-  },
+  // {path: 'error', component: NotFoundPageComponent},
+  // {path: '**', redirectTo: '/error'},
 ];
 
 @NgModule({

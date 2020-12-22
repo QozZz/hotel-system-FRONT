@@ -1,33 +1,25 @@
-<div class="vertical-wrapper" *ngIf="!roomSelected; else roomTemplate">
-  <div class="horizontal-wrapper">
+<div class="room-list" *ngIf="!roomSelected; else roomTemplate">
+  <div class="room-list__close">
+    <div></div>
+    <button
+      class="button button-dark-red"
+      (click)="closeRoomListBlock()"
+    >Close
+    </button>
+  </div>
 
-    <div class="room-list">
-      <div class="room-list__close">
-        <div></div>
-        <button
-          class="button button-dark-red"
-          (click)="closeRoomListBlock()"
-        >Close
-        </button>
-      </div>
-
-      <div class="room-list-content">
-        <div class="room-list__filters">
-          <h1>SSS</h1>
-          <h1>SSS</h1>
-          <h1>SSS</h1>
-        </div>
-
-        <div class="room-list__wrapper">
-          <app-room-item
-            *ngFor="let room of rooms"
-            [roomDto]="room"
-            (onOpenSelectedRoom)="openSelectedRoom(room.id)"
-          ></app-room-item>
-        </div>
-      </div>
+  <div class="room-list-content">
+    <div class="room-list__filters">
+      <h1>Filters</h1>
     </div>
 
+    <div class="room-list__wrapper">
+      <app-room-item
+        *ngFor="let room of rooms"
+        [roomDto]="room"
+        (onOpenSelectedRoom)="openSelectedRoom(room.id)"
+      ></app-room-item>
+    </div>
   </div>
 </div>
 

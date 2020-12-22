@@ -35,8 +35,10 @@ export class RoomListComponent implements OnInit {
 
   openSelectedRoom(id: number) {
     this.roomSelected = !this.roomSelected;
-    this.roomDto = this.roomsCache
-      .find(value => value.id = id);
+    this.roomService.getById(id).subscribe(room => {
+      this.roomDto = room;
+    });
+    console.log('room:', this.roomDto);
   }
 
 }

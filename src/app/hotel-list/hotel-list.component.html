@@ -1,31 +1,38 @@
-<div class="vertical-wrapper" *ngIf="!hotelSelected; else hotelTemplate">
+<div class="vertical-wrapper">
   <div class="horizontal-wrapper">
 
     <div class="hotel-list">
-      <div class="hotel-list__filters">
-        <div class="filter-stars">
+      <div class="filter">
+        <div class="filter__stars">
           <h2>Stars:</h2>
-          <label><span>3</span><input type="checkbox" value="3" (input)="addStarsFilter($event)"></label>
-          <label><span>4</span><input type="checkbox" value="4" (input)="addStarsFilter($event)"></label>
-          <label><span>5</span><input type="checkbox" value="5" (input)="addStarsFilter($event)"></label>
+          <label *ngFor="let value of getCounter(3)">
+            <span>{{value}}</span>
+            <input type="checkbox" value="{{value}}" (input)="starsFilter($event)">
+          </label>
+        </div>
+        <div class="filter__hasRestaurant">
+          <h2>Restaurant:</h2>
+          <label>
+            <span></span>
+            <input type="checkbox" value="true" (input)="restaurantFilter()">
+          </label>
+        </div>
+        <div class="filter__hasPool">
+          <h2>Pool:</h2>
+          <label>
+            <span></span>
+            <input type="checkbox" value="true" (input)="poolFilter()">
+          </label>
         </div>
       </div>
 
-      <div class="hotel-list__wrapper">
+      <div class="hotel-list__items">
         <app-hotel-item
           *ngFor="let hotel of hotels"
           [hotelDto]="hotel"
-          (onOpenSelectedHotel)="openSelectedHotel(hotel.id)"
         ></app-hotel-item>
       </div>
     </div>
 
   </div>
 </div>
-
-<ng-template #hotelTemplate>
-  <app-hotel
-    [hotelDto]="hotelDto"
-    (onCloseHotel)="hotelSelected = !hotelSelected"
-  ></app-hotel>
-</ng-template>
