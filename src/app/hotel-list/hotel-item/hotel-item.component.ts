@@ -8,20 +8,17 @@ import {HotelDto} from '../../shared/models/HotelDto';
 })
 export class HotelItemComponent implements OnInit {
 
-  @Output() onOpenSelectedHotel = new EventEmitter<any>();
   @Input() hotelDto: HotelDto;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log('HotelItemComponent');
   }
 
   getCounter(num: number): Array<number> {
     return new Array(num);
   }
 
-  selectHotel(id: number) {
-    this.onOpenSelectedHotel.emit(id);
-  }
 }

@@ -9,13 +9,12 @@ import {HotelDto} from '../shared/models/HotelDto';
 })
 export class HotelListComponent implements OnInit {
 
-  hotelSelected = false;
-
   hotelsCache: HotelDto[];
   hotels: HotelDto[];
-  hotelDto: HotelDto;
 
-  starsFilter: number[];
+  starsFilterArr: number[];
+  hasRestaurantFilter = false;
+  hasPoolFilter = false;
 
   constructor(
     private hotelService: HotelService
@@ -23,36 +22,61 @@ export class HotelListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('HotelListComponent');
     this.hotelService.getAll().subscribe(hotels => {
       this.hotelsCache = hotels;
       this.hotels = hotels;
     }, error => console.log(error));
-    this.starsFilter = [];
+    this.starsFilterArr = [];
   }
 
-  addStarsFilter(event: any) {
+  starsFilter(event: any) {
     const value = Number(event.target.value);
-    if (!this.starsFilter.includes(value)) {
-      this.starsFilter.push(value);
+    console.log(value);
+    if (!this.starsFilterArr.includes(value)) {
+      this.starsFilterArr.push(value);
     } else {
-      this.starsFilter.splice(this.starsFilter.indexOf(value), 1);
+      this.starsFilterArr.splice(this.starsFilterArr.indexOf(value), 1);
     }
     this.filter();
   }
 
+  restaurantFilter() {
+    this.hasRestaurantFilter = !this.hasRestaurantFilter;
+    console.log(this.hasRestaurantFilter);
+    // this.filter();
+  }
+
+  poolFilter() {
+    this.hasPoolFilter = !this.hasPoolFilter;
+    console.log(this.hasPoolFilter);
+    // this.filter();
+  }
+
   filter() {
-    if (this.starsFilter.length === 0) {
+    if (this.starsFilterArr.length === 0) {
       this.hotels = this.hotelsCache;
     } else {
       this.hotels = this.hotelsCache
-        .filter(value => this.starsFilter.includes(value.stars));
+        .filter(value => this.starsFilterArr.includes(value.stars));
     }
+
+    // if (this.hasRestaurantFilter === true) {
+    //   this.hotels = this.hotelsCache
+    //     .filter(hotel => hotel.hasRestaurant === this.hasRestaurantFilter);
+    // }
+    //
+    // if (this.hasPoolFilter === true) {
+    //   this.hotels = this.hotelsCache
+    //     .filter(hotel => hotel.hasPool === this.hasPoolFilter);
+    // }
   }
 
-  openSelectedHotel(id: number) {
-    this.hotelSelected = !this.hotelSelected;
-    this.hotelDto = this.hotelsCache
-      .find(value => value.id = id);
+  getCounter(num: number): Array<number> {
+    const counter: Array<number> = [];
+    for (let i = num; i <= num + 2; i++) {
+      counter.push(i);
+    }
+    return counter;
   }
-
 }

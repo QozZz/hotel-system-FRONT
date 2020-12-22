@@ -6,18 +6,21 @@ import {AppComponent} from './app.component';
 import {NotFoundPageComponent} from './not-found-page/not-found-page.component';
 import {RouterModule} from '@angular/router';
 import {LayoutModule} from './layout/layout.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule,
-        AppRoutingModule,
-        LayoutModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    LayoutModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

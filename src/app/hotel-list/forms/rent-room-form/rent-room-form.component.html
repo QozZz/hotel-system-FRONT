@@ -1,0 +1,13 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <div class="form-control">
+      <input type="date" formControlName="rentStart">
+    </div>
+    <div class="form-control">
+      <input type="date" formControlName="rentEnd">
+    </div>
+  </div>
+  <div>
+    <button class="button button-green" type="submit">Submit</button>
+  </div>
+</form>

@@ -11,7 +11,9 @@ export class HotelService {
 
   private url = `${Constants.apiUrl}/api/hotels`;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
   getAll(): Observable<HotelDto[]> {

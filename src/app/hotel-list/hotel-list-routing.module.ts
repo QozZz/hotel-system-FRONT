@@ -5,14 +5,8 @@ import {HotelListComponent} from './hotel-list.component';
 import {HotelComponent} from './hotel/hotel.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HotelListComponent,
-  },
-  {
-    path: ':id',
-    component: HotelComponent,
-  },
+  {path: '', component: HotelListComponent},
+  {path: ':hotelId', component: HotelComponent},
 ];
 
 @NgModule({

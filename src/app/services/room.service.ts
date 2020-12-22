@@ -11,11 +11,12 @@ export class RoomService {
 
   private url = `${Constants.apiUrl}/api/rooms`;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
   getAllByHotelId(hotelId: number): Observable<RoomDto[]> {
-    console.log(`${this.url}/hotel/${hotelId}`);
     return this.http.get<RoomDto[]>(`${this.url}/hotel/${hotelId}`);
   }
 

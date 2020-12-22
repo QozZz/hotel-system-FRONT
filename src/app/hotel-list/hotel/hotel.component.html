@@ -1,35 +1,38 @@
-<div class="vertical-wrapper" *ngIf="!isRoomsBlockOpened; else roomListBlock">
+<div class="vertical-wrapper">
   <div class="horizontal-wrapper">
 
-    <div class="hotel">
+    <div class="hotel" *ngIf="!openRoomList; else roomListBlock">
       <div class="hotel__close">
         <div></div>
-          <button
-            class="button button-dark-red"
-            (click)="closeHotel()"
-          >close</button>
+        <button
+          class="button button-dark-red"
+          [routerLink]="['/hotels']"
+        >close
+        </button>
       </div>
       <div class="hotel__title">
         <h1>{{hotelDto.name}}</h1>
         <button
           class="button button-orange"
           (click)="roomListBlockToggle()"
-        >Rooms</button>
+        >Rooms
+        </button>
       </div>
       <div class="hotel__images">
-        <h1>hotel__images</h1>
+        <h1>Images</h1>
       </div>
       <div class="hotel__description">
-        <h1>hotel_description</h1>
+        <h1>Description</h1>
       </div>
     </div>
+
+    <ng-template #roomListBlock>
+      <app-room-list
+        (onCloseRoomListBlock)="roomListBlockToggle()"
+        [hotelId]="hotelDto.id"
+      ></app-room-list>
+    </ng-template>
 
   </div>
 </div>
 
-<ng-template #roomListBlock>
-  <app-room-list
-    (onCloseRoomListBlock)="roomListBlockToggle()"
-    [hotelId]="hotelDto.id"
-  ></app-room-list>
-</ng-template>

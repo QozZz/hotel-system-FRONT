@@ -15,9 +15,11 @@ export class RoomItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('RoomItemComponent');
   }
 
   selectRoom(id: number) {
+    console.log('ID:::', id);
     this.onOpenSelectedRoom.emit(id);
   }
 }
