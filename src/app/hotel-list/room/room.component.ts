@@ -12,7 +12,6 @@ export class RoomComponent implements OnInit {
 
   @Output() onCloseRoom = new EventEmitter<any>();
   @Input() roomDto: RoomDto;
-  rentRoomFormOpen = false;
 
   constructor(
     private scheduleService: ScheduleService
@@ -33,7 +32,6 @@ export class RoomComponent implements OnInit {
     this.scheduleService.rentRoom(rentRoomDto).subscribe(schedule => {
       console.log('schedule::', schedule);
     });
-    this.rentRoomFormOpen = !this.rentRoomFormOpen;
   }
 
 }
