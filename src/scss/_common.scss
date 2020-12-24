@@ -10,19 +10,17 @@
   box-sizing: border-box;
 }
 
-.blur-back {
-  body {
-    filter: blur(10px);
-  }
-}
-
 .horizontal-wrapper {
+  position: relative;
+  display: block;
   max-width: 1200px;
   padding: 0 10px;
   margin: auto;
 }
 
 .vertical-wrapper {
+  position: relative;
+  display: block;
   min-height: calc(100vh - 0px);
   padding-top: 60px;
   padding-bottom: 60px;

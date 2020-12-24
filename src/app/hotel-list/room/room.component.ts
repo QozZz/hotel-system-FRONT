@@ -12,6 +12,9 @@ export class RoomComponent implements OnInit {
 
   @Output() onCloseRoom = new EventEmitter<any>();
   @Input() roomDto: RoomDto;
+  successRentBlockOpen = false;
+  errorRentBlockOpen = false;
+  rentBlockMessage = '';
 
   constructor(
     private scheduleService: ScheduleService
@@ -28,10 +31,28 @@ export class RoomComponent implements OnInit {
 
   rentRoom(rentRoomDto: RentRoomDto) {
     rentRoomDto.roomId = this.roomDto.id;
-    console.log('rentRoomDto.id:', rentRoomDto.roomId);
     this.scheduleService.rentRoom(rentRoomDto).subscribe(schedule => {
-      console.log('schedule::', schedule);
+      this.rentBlockMessage = `${rentRoomDto.rentStart} - ${rentRoomDto.rentEnd}`;
+      this.successRentBlockOpen = true;
+      this.closeRentSucErrBlock();
+    }, error => {
+      if (error.status === 412) {
+        this.rentBlockMessage = `${rentRoomDto.rentStart} - ${rentRoomDto.rentEnd} already taken`;
+      } else {
+        this.rentBlockMessage = 'Fill Dates';
+      }
+
+      this.errorRentBlockOpen = true;
+      this.closeRentSucErrBlock();
     });
+  }
+
+  closeRentSucErrBlock() {
+    setTimeout(() => {
+      this.successRentBlockOpen = false;
+      this.errorRentBlockOpen = false;
+      this.rentBlockMessage = '';
+    }, 5000);
   }
 
 }

@@ -37,4 +37,7 @@ export class LoginComponent implements OnInit {
     this.onLogin.emit(loginDto);
   }
 
+  close() {
+    this.loginBlockOpen = !this.loginBlockOpen;
+  }
 }
