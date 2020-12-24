@@ -1,41 +1,52 @@
-<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+<div class="container">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <button
+        class="button button-dark-red button-small"
+        (click)="close()"
+      >close</button>
 
-  <div class="form-group">
-    <div
-      class="validation"
-      *ngIf="form.get('email').invalid && form.get('email').touched"
-    >
-      <small *ngIf="form.get('email').errors.required">
-        Email cannot be empty
-      </small>
-      <small *ngIf="form.get('email').errors.email">
-        Invalid email, example: test@test.test
-      </small>
+      <div
+        class="validation"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+      >
+        <small *ngIf="form.get('email').errors.required">
+          Email cannot be empty
+        </small>
+        <small *ngIf="form.get('email').errors.email">
+          Invalid email, example: test@test.test
+        </small>
+      </div>
+
+      <div
+        class="validation"
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+      >
+        <small *ngIf="form.get('password').errors.required">
+          Password cannot be empty
+        </small>
+        <small *ngIf="form.get('password').errors.minlength">
+          The length must be at least {{form.get('password').errors.minlength.requiredLength}}.
+          Now = {{form.get('password').errors.minlength.actualLength}}
+        </small>
+      </div>
+
+
+      <div class="form-control">
+        <input type="email" placeholder="Email" formControlName="email" name="email" autocomplete="">
+      </div>
+
+
+      <div class="form-control">
+        <input type="password" placeholder="Password" formControlName="password" autocomplete="">
+      </div>
+
+      <button
+        class="button button-green"
+        type="submit"
+        [class.blur-back]="loginBlockOpen"
+        [disabled]="form.invalid"
+      >LogIn</button>
     </div>
-
-    <div
-      class="validation"
-      *ngIf="form.get('password').invalid && form.get('password').touched"
-    >
-      <small *ngIf="form.get('password').errors.required">
-        Password cannot be empty
-      </small>
-      <small *ngIf="form.get('password').errors.minlength">
-        The length must be at least {{form.get('password').errors.minlength.requiredLength}}.
-        Now = {{form.get('password').errors.minlength.actualLength}}
-      </small>
-    </div>
-
-
-    <div class="form-control">
-      <input type="email" placeholder="Email" formControlName="email" name="email" autocomplete="">
-    </div>
-
-
-    <div class="form-control">
-      <input type="password" placeholder="Password" formControlName="password" autocomplete="">
-    </div>
-
-    <button class="button button-green" type="submit" [class.blur-back]="loginBlockOpen" [disabled]="form.invalid">LogIn</button>
-  </div>
-</form>
+  </form>
+</div>

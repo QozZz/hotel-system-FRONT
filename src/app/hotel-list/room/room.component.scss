@@ -37,3 +37,27 @@
     margin: 0 0 10px 0;
   }
 }
+
+.rent-message {
+  position: absolute;
+  display: block;
+  width: 100%;
+
+  .rentSuccessBlock {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 5px 5px 0 5px;
+    margin-bottom: 15px;
+    color: #37ff00;
+  }
+
+  .rentErrorBlock {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 5px 5px 0 5px;
+    margin-bottom: 15px;
+    color: #ff0000;
+  }
+}

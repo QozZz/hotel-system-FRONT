@@ -44,4 +44,7 @@ export class SignUpComponent implements OnInit {
   }
 
 
+  close() {
+    this.signUpBlockOpen = this.signUpBlockOpen;
+  }
 }
