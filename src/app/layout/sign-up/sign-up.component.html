@@ -1,0 +1,53 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="form-group">
+    <div
+      class="validation"
+      *ngIf="form.get('email').invalid && form.get('email').touched"
+    >
+      <small *ngIf="form.get('email').errors.required">
+        Email cannot be empty
+      </small>
+      <small *ngIf="form.get('email').errors.email">
+        Invalid email, example: test@test.test
+      </small>
+    </div>
+
+    <div
+      class="validation"
+      *ngIf="form.get('password').invalid && form.get('password').touched"
+    >
+      <small *ngIf="form.get('password').errors.required">
+        Password cannot be empty
+      </small>
+      <small *ngIf="form.get('password').errors.minlength">
+        The length must be at least {{form.get('password').errors.minlength.requiredLength}}.
+        Now = {{form.get('password').errors.minlength.actualLength}}
+      </small>
+    </div>
+
+    <div
+      class="validation"
+      *ngIf="form.invalid && form.controls.repeatPassword.touched"
+    >
+      <small *ngIf="form.errors.repeatPassword">
+        Passwords are not equal
+      </small>
+    </div>
+
+
+    <div class="form-control">
+      <input type="email" placeholder="Email" formControlName="email" name="email" autocomplete="">
+    </div>
+
+    <div class="form-control">
+      <input type="password" placeholder="Password" formControlName="password" autocomplete="">
+    </div>
+
+    <div class="form-control">
+      <input type="password" placeholder="Repeat Password" formControlName="repeatPassword" autocomplete="">
+    </div>
+
+    <button class="button button-green" type="submit" [class.blur-back]="signUpBlockOpen" [disabled]="form.invalid">Sign Up</button>
+  </div>
+</form>

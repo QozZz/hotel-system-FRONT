@@ -26,7 +26,7 @@ export class HotelListComponent implements OnInit {
     this.hotelService.getAll().subscribe(hotels => {
       this.hotelsCache = hotels;
       this.hotels = hotels;
-    }, error => console.log(error));
+    });
     this.starsFilterArr = [];
   }
 

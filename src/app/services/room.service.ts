@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Constants} from '../../Constants';
 import {RoomDto} from '../shared/models/RoomDto';
@@ -17,11 +17,19 @@ export class RoomService {
   }
 
   getAllByHotelId(hotelId: number): Observable<RoomDto[]> {
-    return this.http.get<RoomDto[]>(`${this.url}/hotel/${hotelId}`);
+    return this.http.get<RoomDto[]>(`${this.url}/hotel/${hotelId}`, {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('Authorization'),
+      })
+    });
   }
 
   getById(id: number): Observable<RoomDto> {
-    return this.http.get<RoomDto>(`${this.url}/${id}`);
+    return this.http.get<RoomDto>(`${this.url}/${id}`, {
+      headers: new HttpHeaders({
+        Authorization: localStorage.getItem('Authorization'),
+      })
+    });
   }
 
 }

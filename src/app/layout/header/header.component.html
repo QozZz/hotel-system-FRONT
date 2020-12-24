@@ -22,13 +22,25 @@
         </a>
       </div>
       <div class="header__authentication-container" *ngIf="!isLoggedIn; else logoutBlock">
-        <button class="button button-light-blue" (click)="logInOut()">Log In</button>
+        <button class="button button-light-blue" (click)="loginBlockOpen = !loginBlockOpen; signUpBlockOpen = false">Log In</button>
+        <button class="button button-green" (click)="signUpBlockOpen = !signUpBlockOpen; loginBlockOpen = false">Sign Up</button>
       </div>
       <ng-template #logoutBlock>
         <div class="header__authentication-container">
-          <button class="button button-dark-red" (click)="logInOut()">Log Out</button>
+          <button class="button button-dark-red" (click)="logOut()">Log Out</button>
         </div>
       </ng-template>
     </div>
   </div>
 </header>
+<app-login
+  *ngIf="loginBlockOpen"
+  [loginBlockOpen]="loginBlockOpen"
+  (onLogin)="logIn($event)"
+></app-login>
+<app-sign-up
+  *ngIf="signUpBlockOpen"
+  [signUpBlockOpen]="signUpBlockOpen"
+  (onSignUp)="signUp($event)"
+></app-sign-up>
+
