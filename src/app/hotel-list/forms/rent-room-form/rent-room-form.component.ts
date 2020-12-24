@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {RentRoomDto} from '../../../shared/models/RentRoomDto';
 
 @Component({
@@ -19,9 +19,11 @@ export class RentRoomFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       rentStart: new FormControl(
-        ''),
+        '',
+          Validators.required),
       rentEnd: new FormControl(
-        ''),
+        '',
+          Validators.required),
     });
   }
 

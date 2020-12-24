@@ -36,11 +36,10 @@ export class RoomComponent implements OnInit {
       this.successRentBlockOpen = true;
       this.closeRentSucErrBlock();
     }, error => {
-      if (error.status === 412) {
-        this.rentBlockMessage = `${rentRoomDto.rentStart} - ${rentRoomDto.rentEnd} already taken`;
-      } else {
-        this.rentBlockMessage = 'Fill Dates';
-      }
+      console.log(error);
+      console.log(error.error.message);
+
+      this.rentBlockMessage = error.error.message;
 
       this.errorRentBlockOpen = true;
       this.closeRentSucErrBlock();
