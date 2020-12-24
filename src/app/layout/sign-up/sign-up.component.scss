@@ -1,0 +1,49 @@
+@import "src/scss/variables";
+@import "src/scss/common";
+
+.form {
+  z-index: 100;
+
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 50%;
+  justify-content: center;
+  justify-items: center;
+  color: $white;
+
+  .validation {
+    color: red;
+    font-size: 20px;
+    small {
+      //padding-bottom: 10px;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 5px;
+    margin: 20px 0 0 0;
+  }
+
+  &-group {
+    position: relative;
+    display: block;
+    transform: translate(-50%, -50%);
+  }
+
+  &-control {
+    position: relative;
+    display: block;
+
+    input {
+      float: right;
+      height: 25px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+
+}
