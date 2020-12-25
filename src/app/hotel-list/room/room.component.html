@@ -1,15 +1,17 @@
-<div class="room">
-  <div class="rent-message" *ngIf="successRentBlockOpen">
-    <div class="rentSuccessBlock">
-      <h2>Success: {{rentBlockMessage}}</h2>
-    </div>
+<div class="rent-message" *ngIf="successRentBlockOpen">
+  <div class="rentSuccessBlock">
+    <h3>Success: {{rentBlockMessage}}</h3>
   </div>
+</div>
 
-  <div class="rent-message" *ngIf="errorRentBlockOpen">
-    <div class="rentErrorBlock">
-      <h2>Failed: {{rentBlockMessage}}</h2>
-    </div>
+<div class="rent-message" *ngIf="errorRentBlockOpen">
+  <div class="rentErrorBlock">
+    <h3>Failed: {{rentBlockMessage}}</h3>
   </div>
+</div>
+
+<div class="room">
+
 
   <div class="room__close">
     <div></div>
