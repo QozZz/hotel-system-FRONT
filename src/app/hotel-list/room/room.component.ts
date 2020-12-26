@@ -14,7 +14,7 @@ export class RoomComponent implements OnInit {
   @Input() roomDto: RoomDto;
   successRentBlockOpen = false;
   errorRentBlockOpen = false;
-  rentBlockMessage = 'asdfsa';
+  rentBlockMessage = '';
 
   constructor(
     private scheduleService: ScheduleService

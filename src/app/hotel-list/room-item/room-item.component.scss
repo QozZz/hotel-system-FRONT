@@ -25,10 +25,17 @@
 
   &-info {
     position: relative;
-    display: flex;
+    display: block;
     justify-content: space-between;
     padding: 10px 0 10px 10px;
     width: 100%;
+  }
+
+  &-head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
   }
 
   &-price {
@@ -39,5 +46,11 @@
   &-rent {
     position: relative;
     display: block;
+  }
+
+  &-content {
+    position: relative;
+    display: block;
+    font-size: 20px;
   }
 }

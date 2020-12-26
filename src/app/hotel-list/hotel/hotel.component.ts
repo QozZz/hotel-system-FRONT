@@ -13,10 +13,10 @@ import {jello} from 'ng-animate';
     animations: [
         trigger('jello-card', [
             transition('true => false', useAnimation(jello, {
-                params: {timing: 1, delay: 0}
+                params: {timing: 0.5, delay: 0}
             })),
             transition('false => true', useAnimation(jello, {
-                params: {timing: 1, delay: 0}
+                params: {timing: 0.5, delay: 0}
             }))
         ])
     ]
