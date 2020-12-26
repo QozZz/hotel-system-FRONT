@@ -1,43 +1,6 @@
 @import "src/scss/variables";
 @import "src/scss/common";
 
-.room {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding-top: 80px;
-  text-align: left;
-  color: $white;
-
-  &__close {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__title {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid white;
-    margin: 20px 0 10px 0;
-  }
-
-  &__images {
-    position: relative;
-    display: block;
-    border: 1px solid white;
-    margin: 0 0 10px 0;
-  }
-
-  &__description {
-    position: relative;
-    display: block;
-    border: 1px solid white;
-    margin: 0 0 10px 0;
-  }
-}
-
 .rent-message {
   position: relative;
   display: block;
@@ -48,15 +11,77 @@
     position: relative;
     display: block;
     float: right;
-    padding: 25px 5px 0 5px;
+    padding: 5px;
+    margin-top: 25px;
     color: #37ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 white;
   }
 
   .rentErrorBlock {
     position: relative;
     display: block;
     float: right;
-    padding: 25px 5px 0 5px;
+    padding: 5px;
+    margin-top: 25px;
     color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 white;
+  }
+}
+
+.room {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 80px;
+  text-align: left;
+  color: $white;
+
+  &-close {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    margin: 20px 0 10px 0;
+  }
+
+  &-images {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 30px 0 10px 0;
+    padding: 5px;
+    overflow-x: auto;
+
+    .image-block {
+      position: relative;
+      display: block;
+      padding: 10px;
+
+      .image-card {
+        position: relative;
+        display: block;
+
+        img {
+          border-radius: 10px;
+          width: 500px;
+        }
+      }
+    }
+  }
+
+  &-description {
+    position: relative;
+    display: block;
+    border: 1px solid white;
+    margin: 0 0 10px 0;
   }
 }

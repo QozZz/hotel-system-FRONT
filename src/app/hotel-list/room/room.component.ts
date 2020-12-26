@@ -51,7 +51,7 @@ export class RoomComponent implements OnInit {
       this.successRentBlockOpen = false;
       this.errorRentBlockOpen = false;
       this.rentBlockMessage = '';
-    }, 10000);
+    }, 2000);
   }
 
 }

@@ -1,22 +1,29 @@
 <div class="hotel-item">
-  <div class="hotel-item__image">
+  <div class="hotel-item-image">
     <img [routerLink]="['/hotels', hotelDto.id]" src="assets/images/hotel-image.jpg" alt="hotel">
   </div>
-  <div class="hotel-item__info">
-    <div class="hotel-item__stars">
-      <img src="assets/images/small-star.svg" alt="star" *ngFor="let num of getCounter(hotelDto.stars)">
+
+  <div class="hotel-item-info">
+    <div class="hotel-item-head">
+      <div class="hotel-item-title">
+        <h2 [routerLink]="['/hotels', hotelDto.id]">{{hotelDto.name}}</h2>
+      </div>
+      <div class="hotel-item-stars">
+        <img src="assets/images/small-star.svg" alt="star" *ngFor="let num of getCounter(hotelDto.stars)">
+      </div>
     </div>
-    <div class="hotel-item__title">
-      <h2 [routerLink]="['/hotels', hotelDto.id]">{{hotelDto.name}}</h2>
+
+    <div class="hotel-item-description">
+      <div class="scroll-swapper">
+        <p>{{hotelDto.description}}</p>
+      </div>
     </div>
-    <div class="hotel-item__description">
-      <p>{{hotelDto.description}}</p>
-    </div>
-    <div class="hotel-item__facilities">
-      <div class="hotel-item__facilities-item">
+
+    <div class="hotel-item-facilities">
+      <div class="facilities-item">
         <img *ngIf="hotelDto.hasPool" src="assets/images/hotel-item-small-pool.svg" alt="Pool">
       </div>
-      <div class="hotel-item__facilities-item">
+      <div class="facilities-item">
         <img *ngIf="hotelDto.hasRestaurant" src="assets/images/hotel-item-small-restaurant.svg" alt="Restaurant">
       </div>
     </div>

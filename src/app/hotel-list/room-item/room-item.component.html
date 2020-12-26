@@ -1,16 +1,27 @@
 <div class="room-item">
-  <div class="room-item__image">
+
+  <div class="room-item-image">
     <img (click)="selectRoom(roomDto.id)" src="assets/images/room-image.jpg" alt="hotel">
   </div>
-  <div class="room-item__info">
-    <div class="hotel-item__price">
-      <h1>$ {{roomDto.price}}</h1>
+
+  <div class="room-item-info">
+    <div class="room-item-head">
+      <div class="room-item-price">
+        <h1>Price: ${{roomDto.price}}</h1>
+      </div>
+      <div class="room-item-rent">
+        <button
+          class="button button-orange"
+          (click)="selectRoom(roomDto.id)"
+        >Room</button>
+      </div>
     </div>
-    <div class="room-item__rent">
-      <button
-        class="button button-orange"
-        (click)="selectRoom(roomDto.id)"
-      >Room</button>
+
+    <div class="room-item-content">
+      <p>type: </p>
+      <p>bed: </p>
+      <p>... </p>
     </div>
   </div>
+
 </div>

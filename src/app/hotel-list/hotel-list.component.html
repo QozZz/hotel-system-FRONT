@@ -2,31 +2,33 @@
   <div class="horizontal-wrapper">
 
     <div class="hotel-list">
-      <div class="filter">
-        <div class="filter__stars">
-          <h2>Stars:</h2>
-          <label *ngFor="let value of getCounter(3)">
-            <span>{{value}}</span>
-            <input type="checkbox" value="{{value}}" (input)="starsFilter($event)">
-          </label>
-        </div>
-        <div class="filter__hasRestaurant">
-          <h2>Restaurant:</h2>
-          <label>
-            <span></span>
-            <input type="checkbox" value="true" (input)="restaurantFilter()">
-          </label>
-        </div>
-        <div class="filter__hasPool">
-          <h2>Pool:</h2>
-          <label>
-            <span></span>
-            <input type="checkbox" value="true" (input)="poolFilter()">
-          </label>
+      <div class="hotel-list-filters">
+        <div class="filter-wrapper">
+          <div class="filter-stars">
+            <h2>Stars:</h2>
+            <label *ngFor="let value of getCounter(3)">
+              <span>{{value}}</span>
+              <input type="checkbox" value="{{value}}" (input)="starsFilter($event)">
+            </label>
+          </div>
+          <div class="filter-hasRestaurant">
+            <h2>Restaurant:</h2>
+            <label>
+              <span></span>
+              <input type="checkbox" value="true" (input)="restaurantFilter()">
+            </label>
+          </div>
+          <div class="filter-hasPool">
+            <h2>Pool:</h2>
+            <label>
+              <span></span>
+              <input type="checkbox" value="true" (input)="poolFilter()">
+            </label>
+          </div>
         </div>
       </div>
 
-      <div class="hotel-list__items">
+      <div class="hotel-list-items">
         <app-hotel-item
           *ngFor="let hotel of hotels"
           [hotelDto]="hotel"

@@ -7,7 +7,7 @@
   width: 100%;
   padding-top: 80px;
 
-  &__close {
+  &-close {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -21,18 +21,29 @@
     color: $white;
   }
 
-  &__filters {
+  &-filters {
     position: relative;
     display: block;
-    padding: 15px 5px 5px 10px;
-    width: 300px;
+    padding: 5px;
+    width: 25%;
+
+    .filter-types {
+      position: relative;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .filter-price {
+      position: relative;
+      display: block;
+      margin-bottom: 20px;
+    }
   }
 
-  &__wrapper {
+  &-wrapper {
     position: relative;
     display: block;
     padding-top: 5px;
-    width: 900px;
+    width: 75%;
   }
-
 }

@@ -7,6 +7,7 @@ import {NotFoundPageComponent} from './not-found-page/not-found-page.component';
 import {RouterModule} from '@angular/router';
 import {LayoutModule} from './layout/layout.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
     LayoutModule,
