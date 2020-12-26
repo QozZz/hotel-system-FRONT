@@ -53,6 +53,10 @@
       border-radius: 5px;
       background-color: rgba(0, 204, 255, 0.1);
       overflow-y: auto;
+
+      &:hover {
+        box-shadow: 0 0 5px white;
+      }
     }
 
     .card-front_population {
