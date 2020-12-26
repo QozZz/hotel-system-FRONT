@@ -9,31 +9,81 @@
   text-align: left;
   color: $white;
 
-  &__close {
+  &-close {
     position: relative;
     display: flex;
     justify-content: space-between;
   }
 
-  &__title {
+  &-content {
+    position: relative;
+    display: block;
+  }
+
+  &-title {
     position: relative;
     display: flex;
     justify-content: space-between;
-    border: 1px solid white;
     margin: 20px 0 10px 0;
   }
 
-  &__images {
+  &-info {
     position: relative;
-    display: block;
-    border: 1px solid white;
-    margin: 0 0 10px 0;
-  }
+    display: flex;
+    flex-wrap: wrap;
 
-  &__description {
-    position: relative;
-    display: block;
-    border: 1px solid white;
-    margin: 0 0 10px 0;
+    &-block {
+      position: relative;
+      display: block;
+      padding: 5px;
+      margin-bottom: 30px;
+      width: 25%;
+      border-radius: 5px;
+    }
+
+    &-card {
+      position: relative;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      height: 200px;
+      border: solid 1px #00ccff;
+      border-radius: 5px;
+      background-color: rgba(0, 204, 255, 0.1);
+      overflow-y: auto;
+    }
+
+    .card-front_population {
+
+    }
+
+    .card-back_population {
+
+    }
+
+    .card-front_room-types {
+
+    }
+
+    .card-back_room-types {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .room-type-wrap {
+        position: relative;
+        display: block;
+        padding: 5px;
+        margin: 3px;
+        width: 45%;
+        border: solid 1px white;
+        border-radius: 5px;
+      }
+    }
   }
 }

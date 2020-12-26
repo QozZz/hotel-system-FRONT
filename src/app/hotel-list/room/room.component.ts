@@ -14,7 +14,7 @@ export class RoomComponent implements OnInit {
   @Input() roomDto: RoomDto;
   successRentBlockOpen = false;
   errorRentBlockOpen = false;
-  rentBlockMessage = '';
+  rentBlockMessage = 'asdfsa';
 
   constructor(
     private scheduleService: ScheduleService
@@ -51,7 +51,7 @@ export class RoomComponent implements OnInit {
       this.successRentBlockOpen = false;
       this.errorRentBlockOpen = false;
       this.rentBlockMessage = '';
-    }, 10000);
+    }, 2000);
   }
 
 }

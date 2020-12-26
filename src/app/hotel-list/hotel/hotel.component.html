@@ -2,7 +2,7 @@
   <div class="horizontal-wrapper">
 
     <div class="hotel" *ngIf="!openRoomList; else roomListBlock">
-      <div class="hotel__close">
+      <div class="hotel-close">
         <div></div>
         <button
           class="button button-dark-red"
@@ -10,19 +10,51 @@
         >close
         </button>
       </div>
-      <div class="hotel__title">
-        <h1>{{hotelDto.name}}</h1>
-        <button
-          class="button button-orange"
-          (click)="roomListBlockToggle()"
-        >Rooms
-        </button>
-      </div>
-      <div class="hotel__images">
-        <h1>Images</h1>
-      </div>
-      <div class="hotel__description">
-        <h1>Description</h1>
+
+      <div class="hotel-content">
+        <div class="hotel-title">
+          <h1>{{hotelDto.name}}</h1>
+          <button
+            class="button button-orange"
+            (click)="roomListBlockToggle()"
+          >Rooms
+          </button>
+        </div>
+
+        <div class="hotel-info">
+
+          <div class="hotel-info-block">
+            <div class="hotel-info-card" [@jello-card]="populationCard" (click)="populationCard = !populationCard">
+              <div class="card-front_population" *ngIf="populationCard; else populationCardBack">
+                <h1>Population</h1>
+              </div>
+              <ng-template #populationCardBack>
+                <div class="card-back_population">
+                  <h1>80%</h1>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+
+          <div class="hotel-info-block">
+            <div class="hotel-info-card" [@jello-card]="roomTypesCard" (click)="roomTypesCard = !roomTypesCard">
+              <div class="card-front_room-types" *ngIf="roomTypesCard; else roomTypesCardBack">
+                <h1>Room types</h1>
+              </div>
+              <ng-template #roomTypesCardBack>
+                <div class="card-back_room-types">
+                  <div class="room-type-wrap">default</div>
+                  <div class="room-type-wrap">Suite</div>
+                  <div class="room-type-wrap">de luxe</div>
+                  <div class="room-type-wrap">Duplex</div>
+                  <div class="room-type-wrap">Family Room</div>
+                  <div class="room-type-wrap">Studio</div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 

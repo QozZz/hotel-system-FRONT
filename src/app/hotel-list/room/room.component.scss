@@ -48,15 +48,21 @@
     position: relative;
     display: block;
     float: right;
-    padding: 25px 5px 0 5px;
+    padding: 5px;
+    margin-top: 25px;
     color: #37ff00;
+    border-radius: 5px;
+    box-shadow: 0 0 white;
   }
 
   .rentErrorBlock {
     position: relative;
     display: block;
     float: right;
-    padding: 25px 5px 0 5px;
+    padding: 5px;
+    margin-top: 25px;
     color: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 0 white;
   }
 }
